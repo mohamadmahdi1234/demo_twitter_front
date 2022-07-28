@@ -1,6 +1,9 @@
 {
   "name": "test_word_cloud",
   "version": "0.1.0",
+  "engines": {
+    "npm": "8.5.5"
+  },
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
