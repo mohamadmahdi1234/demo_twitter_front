@@ -4,6 +4,7 @@ import { Resizable } from "re-resizable";
 import Glass from './components/Glass'
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
+import ScrollToTop from "react-scroll-to-top";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useLocation,useNavigate} from 'react-router-dom';
 import './App.css';
@@ -40,10 +41,11 @@ function App() {
    
   
   return (
-    <div style={{width:"fit-content"}}>
+    <div style={{width:"100%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",alignContent:"center",justifyItems:"center"}}>
+      <ScrollToTop style={{backgroundColor:"purple",width:"100px",float:"left"}} smooth color="#6f00ff" />
       {
         show?
-        <SideNav style={{backgroundColor:"purple",backgroundImage: `url("https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg")`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}} expanded={show}> 
+        <SideNav style={{backgroundColor:"purple",position:"fixed",backgroundImage: `url("https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg")`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}} expanded={show}> 
         <SideNav.Toggle
           onClick={() => {
            setSow(!show)
@@ -65,8 +67,8 @@ function App() {
         :
         
         
-        <SideNav  style={{backgroundColor:"purple",bottom:"100%"}} expanded={show}> 
-        <SideNav.Toggle style={{heigth:"60px"}}
+        <SideNav  style={{backgroundColor:"purple",bottom:"100%",position:"fixed"}} expanded={show}> 
+        <SideNav.Toggle style={{heigth:"60px",position:"absolute"}}
           onClick={() => {
            setSow(!show)
           }}

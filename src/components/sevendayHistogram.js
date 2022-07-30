@@ -9,9 +9,11 @@ import {Card,Button} from 'react-bootstrap'
 import { useSelector, useDispatch } from "react-redux";
 import { Line } from "react-chartjs-2";
 import Chart from 'chart.js/auto';
+import { useMediaQuery } from 'react-responsive'
 
 const LinechartSeven=()=> {
     const data = useSelector((state)=>state.slice_for_torob.data_seven_day);
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 668px)' })
   return (
     
     <>
@@ -19,6 +21,12 @@ const LinechartSeven=()=> {
     
      {
         data?
+        isTabletOrMobile?
+        <div className='glass'>
+        <Line data={data} width={300}
+        height={300} />
+        </div>
+        :
         <div className='glass'>
         <Line data={data} width={600}
         height={300} />
