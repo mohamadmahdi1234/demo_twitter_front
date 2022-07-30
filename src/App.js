@@ -18,6 +18,7 @@ import { menuItems } from "./components/menuitems";
 import MenuItems from "./components/Navbar/MenuItems";
 import LineChart from "./components/controlChart"
 import SevenDayHistogram from './components/sevendayHistogram'
+import { useMediaQuery } from 'react-responsive'
 import PieHistogram from './components/piecomponent';
 import SideNav, {
   Toggle,
@@ -29,6 +30,7 @@ import SideNav, {
 import { useState } from 'react';
 
 function App() {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 600px)' })
   const [show,setSow]=useState(false)
   const navigate = useNavigate();
   const dispatch=useDispatch();
@@ -42,7 +44,13 @@ function App() {
   
   return (
     <div style={{width:"100%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",alignContent:"center",justifyItems:"center"}}>
-      <ScrollToTop style={{backgroundColor:"purple",width:"100px",float:"left"}} smooth color="#6f00ff" />
+      {
+        isTabletOrMobile?
+        <ScrollToTop style={{backgroundColor:"purple",width:"40px",height:"40px",float:"left",borderRadius:"50%"}} smooth color="#6f00ff" />
+        :
+        <ScrollToTop style={{backgroundColor:"purple",width:"100px",float:"left"}} smooth color="#6f00ff" />
+      }
+      
       {
         show?
         <SideNav style={{backgroundColor:"purple",position:"fixed",backgroundImage: `url("https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg")`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}} expanded={show}> 

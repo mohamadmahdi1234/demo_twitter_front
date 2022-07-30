@@ -20,6 +20,7 @@ function Glass() {
     },
   };
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 825px)' })
+  const isTabletOrMobile1 = useMediaQuery({ query: '(max-width: 600px)' })
   const [gender, setGender] = useState('')
   const [iscome,setIsCome]=useState(null);
   const [wor,setWor] = useState([])
@@ -195,14 +196,14 @@ function Glass() {
 
 {
   jso!==null||ppp!=null?
-    <div className='glass' style={{marginTop:"40px",display:"flex",flexDirection:"column"}}>
+    <div className='glass' style={{marginTop:"40px",display:"flex",flexDirection:"column",marginBottom:"20px"}}>
     {
       jso!==null||ppp!=null?
       help.map((product) => (
         <>
         {
           isTabletOrMobile?
-          <div className="holderTweets" style={{flexDirection:"column"}}>
+          <div className="holderTweets" style={{flexDirection:"column",rowGap:"20px"}}>
           <div className='imageName' >
              <div className='imageProf'>
   
@@ -265,11 +266,19 @@ function Glass() {
 }
 {
   showload?
-  <>
+  
+  
+    isTabletOrMobile1?
+    
+    <button onClick={()=>loadmorefunction()}style={{width:"90px"}} className='loadMore'>
+      load more
+    </button>
+    :
     <button onClick={()=>loadmorefunction()} className='loadMore'>
       load more
     </button>
-    </>
+  
+    
   :
   null
 }
