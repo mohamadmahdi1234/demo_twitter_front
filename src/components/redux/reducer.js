@@ -87,7 +87,7 @@ export const torob_Slice = createSlice({
               let po1= []
               let positive=[]
               let neutral=[]
-            for(let i =0;i<Math.min(6, Object.keys(state.Jso.mile_negative.Time).length);i++){
+            for(let i =Math.max(0, Object.keys(state.Jso.mile_negative.Time).length-6);i<Object.keys(state.Jso.mile_negative.Time).length;i++){
                po.push(state.Jso.mile_negative.Time[i])
                po1.push(state.Jso.mile_negative.count[i])
                positive.push(state.Jso.mile_positive.count[i])

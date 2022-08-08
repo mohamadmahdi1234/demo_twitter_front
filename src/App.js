@@ -68,6 +68,11 @@ function App() {
   }
   },[currentPage,driversData]);
   const fetchData = (number)=>{
+    if(query===''){
+      const msg="pls first type query"
+      alert(msg)
+      return
+    }
     setLoad(true)
     fetch(`https://demo-server-twitter.herokuapp.com/prediction?num=${number}&query=${query}`,{
           method:"GET",
