@@ -69,7 +69,7 @@ function App() {
   },[currentPage,driversData]);
   const fetchData = (number)=>{
     setLoad(true)
-    fetch(`http://localhost:8080/prediction?num=${number}&query=${query}`,{
+    fetch(`https://demo-server-twitter.herokuapp.com/prediction?num=${number}&query=${query}`,{
           method:"GET",
           
           headers:{
