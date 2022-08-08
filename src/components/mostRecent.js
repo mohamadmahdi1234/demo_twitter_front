@@ -18,8 +18,22 @@ const Recent=()=> {
     alignItems: "center",
     justifyContent: "center",
     border: "solid 1px #ddd",
-    backgroundColor: "purple",
     
+  };
+  const options = {
+    colors: ["#010b29","#02164f","#18244a","#082785","#3154bd","#4f79f7","#717b99","#1f77b4"],
+    enableTooltip: true,
+    deterministic: false,
+    fontFamily: "impact",
+    fontSizes: [20, 150],
+    fontStyle: "normal",
+    fontWeight: "normal",
+    padding: 1,
+    rotations: 3,
+    rotationAngles: [0, 90],
+    scale: "sqrt",
+    spiral: "archimedean",
+    transitionDuration: 1000
   };
 
   return (
@@ -27,41 +41,18 @@ const Recent=()=> {
     <>
     <div>
         {
-            isTabletOrMobile?
-            <div>
+            
+            <div className='glass4' style={{height:"fit-content",backdropFilter:"blur(10px)",marginTop:"5em"}}>
             {
               wor!==null&&wor.length>0?
-              <div style={{backgroundColor:"dark",marginTop:"40px",width:"300px"}}>
-            <Resizable className='glass2'
+              <div style={{marginTop:"40px",width:"100%",display:"flex",justifyContent:"center",flexDirection:"row",backdropFilter:"blur(10px)"}}>
+            
+             
               
-              style={resizeStyle}
-            >
-              <h2 style={{color:"white"}}>most repeated words</h2>
-              <div style={{ width: "60%", height: "100%" }}>
-                <ReactWordcloud words={wor} />
+              <div style={{ width: "80%", height: "600px" ,borderColor:"black",borderBlockStyle:"groove",marginLeft:"0%",marginBottom:"5%",marginTop:"2.5%",borderLeftStyle:"groove",borderRightStyle:"groove",backgroundColor:"rgb(148, 148, 227)",borderBlockColor:"blue",borderColor:"blue"}}>
+                <ReactWordcloud options={options} words={wor} />
               </div>
-            </Resizable>
-              </div>
-              :
-              null
-            }
-          
-      
-          </div>
-            :
-            <div>
-            {
-              wor!==null&&wor.length>0?
-              <div style={{backgroundColor:"dark",marginTop:"40px",width:"600px"}}>
-            <Resizable className='glass2'
-              
-              style={resizeStyle}
-            >
-              <h2 style={{color:"white"}}>most repeated words</h2>
-              <div style={{ width: "60%", height: "100%" }}>
-                <ReactWordcloud words={wor} />
-              </div>
-            </Resizable>
+            
               </div>
               :
               null

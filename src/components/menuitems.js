@@ -4,21 +4,23 @@ export const menuItems = [
     },
     
     {
-      title: "Services",
+      title: "Analysis",
       submenu: [
         {
           title: "Sentiment",
           submenu: [
             {
-              title: "most_Repeat",
+              title: "Word_Cloud",
             },
                 {
-                  title: "control_chart",
+                  title: "Control_chart",
                 },
                 {
-                  title:"pie_histogram"
+                  title:"Pie_histogram"
                 },{
-                  title:"control_chart_sevenDay"
+                  title:"Control_chart_Daily"
+                },{
+                  title:"VericalChart"
                 }
               
           

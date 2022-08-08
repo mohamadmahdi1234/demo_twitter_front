@@ -72,7 +72,7 @@ function Glass() {
     setshowload(null)
 
       console.log(query)
-      fetch(`https://demo-server-twitter.herokuapp.com/prediction?num=${gender}&query=${query}`,{
+      fetch(`http://localhost:8080/prediction?num=${gender}&query=${query}`,{
           method:"GET",
           
           headers:{

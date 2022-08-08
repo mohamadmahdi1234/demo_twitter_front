@@ -39,13 +39,17 @@ header {
   flex-direction: column;
   list-style: none;
   height: fit-content;
-  margin-left: -5px;
+  margin-left: 20px;
   margin-right: 40px;
+  background-color: rgb(65, 173, 222,0.1);
+  width: 80%;
+  backdrop-filter: blur(15px);
 }
 
 .menu-items {
   position: relative;
   font-size: 14px;
+  
 }
 
 .menu-items p {
@@ -73,7 +77,7 @@ header {
 
 .menu-items p:hover,
 .menu-items button:hover {
-  background-color: #f2f2f2;
+  background-color:transparent
 }
 
 .arrow::after {
@@ -97,7 +101,8 @@ header {
   min-width: 10rem;
   padding: 0.5rem 0;
   list-style: none;
-  background-color: #fff;
+  background-color: rgb(65, 173, 222);
+  backdrop-filter: blur(2px);
   border-radius: 0.5rem;
   display: none;
   width: fit-content;
@@ -112,4 +117,47 @@ header {
   left: 100%;
   top: -8px;
   margin-top: 4px;
+}
+.kh{
+  background-color: blue;
+  height: fit-content;
+  width: 300px;
+}
+.w{
+  width: 60%;
+}
+.twtimage{
+  border-radius: 50%;
+  background-image: url('../public/unnamed.png');
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat, repeat;
+  background-size: cover; 
+  margin-left:auto;
+  margin-right:25px;
+  margin-top: 5px;
+}
+.twtimage1{
+  border-radius: 50%;
+  background-image: url('../public/unnamed.png');
+  width: 50px;
+  height: 50px;
+  margin:auto;
+  background-repeat: no-repeat, repeat;
+  background-size: cover; 
+  
+}
+.childbigger{
+  position:absolute;
+  left:0;
+  right:0;
+}
+.arrow {
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.up {
+  transform: rotate(-180deg);
+ 
 }

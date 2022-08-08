@@ -14,7 +14,7 @@ body
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
-   
+    overflow-x: hidden;
     align-items: center;
     min-height: 100vh;
     background-color: #fffce2;

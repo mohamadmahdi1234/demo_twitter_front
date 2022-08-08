@@ -65,7 +65,7 @@ const MenuItems = ({ items, depthLevel }) => {
             submenus={items.submenu}
             dropdown={dropdown}
           />
-          <div style={{height:"1px",backgroundColor:"black"}}></div>
+          
         </>
       ) : (
         <div>
