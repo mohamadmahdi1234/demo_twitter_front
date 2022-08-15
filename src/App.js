@@ -74,7 +74,7 @@ function App() {
       return
     }
     setLoad(true)
-    fetch(`http://localhost:8080/prediction?num=${number}&query=${query}`,{
+    fetch(`https://demo-server-twitter.herokuapp.com/prediction?num=${number}&query=${query}`,{
           method:"GET",
           
           headers:{
@@ -116,20 +116,7 @@ function App() {
       )
       .catch((error) =>doubleHandle(error))
 
-      fetch(`http://localhost:8080/image`,{
-        method:"GET",
-        
-        headers:{
-            
-            "Content-type" : "application/json;charset=UTF-8"
-        }
-    }).then(response=>{
-      setrespon(response)
       
-
-  }
-    )
-    .catch((error) =>doubleHandle(error))
 
 
   }
