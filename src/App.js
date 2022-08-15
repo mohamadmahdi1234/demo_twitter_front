@@ -45,7 +45,7 @@ function App() {
   const[query,setQuery]=useState('')
   const [jso,setJso] = useState(null)
   const[load,setLoad]=useState(false)
-
+  const [respon,setrespon]=useState(null)
   const pageNumberLimit = 5;
   const [passengersData, setData] = useState([]);
   const driversData =useSelector((state)=>state.slice_for_torob.forTable)
@@ -74,7 +74,7 @@ function App() {
       return
     }
     setLoad(true)
-    fetch(`https://demo-server-twitter.herokuapp.com/prediction?num=${number}&query=${query}`,{
+    fetch(`http://localhost:8080/prediction?num=${number}&query=${query}`,{
           method:"GET",
           
           headers:{
@@ -115,6 +115,22 @@ function App() {
     }
       )
       .catch((error) =>doubleHandle(error))
+
+      fetch(`http://localhost:8080/image`,{
+        method:"GET",
+        
+        headers:{
+            
+            "Content-type" : "application/json;charset=UTF-8"
+        }
+    }).then(response=>{
+      setrespon(response)
+      
+
+  }
+    )
+    .catch((error) =>doubleHandle(error))
+
 
   }
    
@@ -164,7 +180,7 @@ function App() {
       
       {
         show?
-        <SideNav style={{backgroundColor:"purple",position:"fixed",backgroundImage: `url("https://mdbootstrap.com/img/Photos/Others/sidenav4.jpg")`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}} expanded={show}> 
+        <SideNav className="snav" style={{backgroundColor:"purple",position:"fixed",backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwy37I6hiQNt3k3OBvpMGG3khNSxXoOWXQeg&usqp=CAU')`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}} expanded={show}> 
         <SideNav.Toggle
           onClick={() => {
            setSow(!show)
@@ -210,6 +226,7 @@ function App() {
         
         <SideNav  style={{backgroundColor:"purple",bottom:"100%",position:"fixed"}} expanded={show}> 
         <div className='childbigger' style={{margin:"0",padding:"0",overflow:"hidden",backgroundColor:"rgb(11, 11, 86,0.8)",width:"100vw",height:"60px",display:"flex",alignContent:"center"}}>
+        <h5 style={{marginLeft:"60px",marginTop:"18px",color:"white"}}>Back to Menu</h5>
                 <div className='twtimage'>
 
                 </div>
@@ -219,6 +236,8 @@ function App() {
           }}
           
         />
+        
+        
         </div>
       </SideNav>
       

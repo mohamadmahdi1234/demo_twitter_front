@@ -25,22 +25,9 @@ export const menuItems = [
               
           
           ],
-        },
-        {
-          title: "SEO",
-        },
+        }
       ],
     },
-    {
-      title: "About",
-      submenu: [
-        {
-          title: "Who we are",
-        },
-        {
-          title: "Our values",
-        },
-      ],
-    },
+   
   ];
   

@@ -26,18 +26,40 @@ const LinechartSeven=()=> {
         data?
         
         <Line data={data} 
-        width={isTabletOrMobile1?isTabletOrMobile2?isTabletOrMobile?isTabletOrMobile3?340:400:600:800:1000}
+        width={isTabletOrMobile1?isTabletOrMobile2?isTabletOrMobile?isTabletOrMobile3?340:400:600:800:1500}
         height={600}
-        style={{marginTop:"5em",backgroundColor:"rgba(225, 225, 225, 0.05)",backdropFilter:"blur(10px)",fontColor:"white"}}
+        style={{marginTop:"4em",backgroundColor:"rgba(225, 225, 225, 0.05)",backdropFilter:"blur(10px)",fontColor:"white"}}
         options= {{
           maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                color:"white",
+                font: {
+                    size: 20
+                  }
+              }
+            },
+            title: {
+              display: true,
+              text: 'Chart.js Line Chart',
+              color:"white",
+              font: {
+                size: 20
+              }
+            },
+          }
+          ,
           scales: {
               yAxes:{
                   
                   ticks:{
                       beginAtZero: true,
                       color: 'white',
-                      fontSize: 12,
+                      font: {
+                        size: 20
+                      }
                   }
               },
               xAxes: {
@@ -45,9 +67,12 @@ const LinechartSeven=()=> {
                   ticks:{
                       beginAtZero: true,
                       color: 'white',
-                      fontSize: 12,
+                      font: {
+                        size: 20
+                      }
                   }
               },
+              
           }
       }}
          />

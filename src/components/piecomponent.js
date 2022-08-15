@@ -36,7 +36,17 @@ const PieHistogram=()=> {
         width={"600px"}
         height={"600px"}
        
-  options={{ maintainAspectRatio: false }}/>
+  options={{ maintainAspectRatio: false , plugins: {
+      legend: {
+        position: 'top',
+        labels: {
+          color:"white",
+          font: {
+              size: 20
+            }
+        }
+      }
+    }}}/>
         </div>
         :
         <p>nothing to show pls go home</p>
