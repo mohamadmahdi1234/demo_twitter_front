@@ -12,13 +12,15 @@ import { shape } from '@mui/system';
 
 const Recent=()=> {
     const wor = useSelector((state)=>state.slice_for_torob.repeated);
-    const logo = useSelector((state)=>state.slice_for_torob.for_twitter_logo);
-    const[st,setst]=useState("")
-    console.log(logo)
+    const logo = useSelector((state)=>state.slice_for_torob.for_twitter_logo)
+    const[st,setst]=useState('')
+    
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 621px)' })
     useEffect(() => {
+      console.log("hello use effect")
+      console.log(st)
       setst(logo)
-    },[logo]);
+    },[wor,logo]);
   const resizeStyle = {
     display: "flex",
     alignItems: "center",
@@ -67,10 +69,8 @@ const Recent=()=> {
             }
             <h1 style={{color:"white",marginLeft:"25%",marginBottom:"50px",width:"50%"}}> WordCloud image in shape of twitter logo</h1>
             {
-              st===''?
-              null
-              :
-            <img src="https://demo-server-twitter.herokuapp.com/image" style={{marginLeft:"25%",marginBottom:"10%",width:"50%"}}></img>
+              
+            <img cache={false} src={st} key={st} style={{marginLeft:"25%",marginBottom:"10%",width:"50%"}}></img>
             }
       
           </div>

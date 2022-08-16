@@ -16,7 +16,8 @@ const initialState ={
     forTable:null,
     forTablev2:null,
     dataVertical:null,
-    for_twitter_logo:""
+    for_twitter_logo:"",
+    query:"none"
 };
 export const torob_Slice = createSlice({
     name: "slice_for_torob",
@@ -36,11 +37,13 @@ export const torob_Slice = createSlice({
             if(action.payload===1){
               state.for_twitter_logo=""
             }else{
-              state.for_twitter_logo='https://demo-server-twitter.herokuapp.com/image'
+              state.for_twitter_logo=`https://demo-server-twitter.herokuapp.com/image?query=${state.query}`
             }
           },changeupdate : (state)=>{
             state.update = !state.update
             state.holder1=state.Jso
+          },changequery : (state,action)=>{
+            state.query = action.payload
           },handledataforlineChart:(state)=>{
             
             if(state.Jso!==null){
@@ -333,7 +336,7 @@ export const torob_Slice = createSlice({
     },
   });
   
-  export const {saveRepeated,saveJso,changeupdate,handledataforlineChart,update_logo,handledataforlineChartSevenDay,handledataforverticalChart,handlesortBasePolaritySoudi,handlesortBasePolarityNozuli,handlepieChart,handlesortBaseDateNozuli,handleDataForTable,handlesortBaseDateSoudi,handlesortBaseTweetSoudi,handlesortBaseTweetNozuli} = torob_Slice.actions;
+  export const {saveRepeated,saveJso,changeupdate,changequery,handledataforlineChart,update_logo,handledataforlineChartSevenDay,handledataforverticalChart,handlesortBasePolaritySoudi,handlesortBasePolarityNozuli,handlepieChart,handlesortBaseDateNozuli,handleDataForTable,handlesortBaseDateSoudi,handlesortBaseTweetSoudi,handlesortBaseTweetNozuli} = torob_Slice.actions;
   
   export default torob_Slice.reducer;
   
