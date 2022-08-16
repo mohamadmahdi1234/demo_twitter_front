@@ -43,7 +43,7 @@ const VerticalChart=()=> {
             },
             title: {
               display: true,
-              text: 'Chart.js Bar Chart',
+              text: ' Bar Chart Tweet Sentiment Base On Latest Hours',
               color:"white",
               font: {
                 size: 20

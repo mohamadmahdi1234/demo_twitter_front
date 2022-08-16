@@ -12,6 +12,7 @@ import { shape } from '@mui/system';
 
 const Recent=()=> {
     const wor = useSelector((state)=>state.slice_for_torob.repeated);
+    const logo = useSelector((state)=>state.slice_for_torob.for_twitter_logo);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 621px)' })
  
   const resizeStyle = {
@@ -61,8 +62,12 @@ const Recent=()=> {
               null
             }
             <h1 style={{color:"white",marginLeft:"25%",marginBottom:"50px",width:"50%"}}> WordCloud image in shape of twitter logo</h1>
-            <img src="http://localhost:8080/image" style={{marginLeft:"25%",marginBottom:"10%",width:"50%"}}></img>
-          
+            {
+              logo===''?
+              null
+              :
+            <img src="https://demo-server-twitter.herokuapp.com/image" style={{marginLeft:"25%",marginBottom:"10%",width:"50%"}}></img>
+            }
       
           </div>
         }

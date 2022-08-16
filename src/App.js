@@ -27,7 +27,7 @@ import { useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import PieHistogram from './components/piecomponent';
 import VerticalChart from './components/DailyHour'
-import { saveRepeated,saveJso,handledataforlineChart,handledataforlineChartSevenDay,handledataforverticalChart,handlepieChart,handleDataForTable} from './components/redux/reducer'
+import { saveRepeated,saveJso,handledataforlineChart,handledataforlineChartSevenDay,update_logo,handledataforverticalChart,handlepieChart,handleDataForTable} from './components/redux/reducer'
 import SideNav, {
   Toggle,
   Nav,
@@ -74,6 +74,7 @@ function App() {
       return
     }
     setLoad(true)
+    dispatch(update_logo(1))
     fetch(`https://demo-server-twitter.herokuapp.com/prediction?num=${number}&query=${query}`,{
           method:"GET",
           
@@ -106,6 +107,7 @@ function App() {
         dispatch(handledataforlineChartSevenDay())
         dispatch(handlepieChart())
         dispatch(handledataforverticalChart())
+        dispatch(update_logo(2))
         reset()
         setLoad(false)
       }else{

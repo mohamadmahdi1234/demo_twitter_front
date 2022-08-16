@@ -80,7 +80,7 @@ const Linechart=()=> {
             },
             title: {
               display: true,
-              text: 'Chart.js Line Chart',
+              text: 'Line Chart for All Tweets',
               color:"white",
               font: {
                 size: 20

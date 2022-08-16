@@ -110,8 +110,8 @@ header {
   border-radius: 0.5rem;
   display: none;
   width: fit-content;
-  margin-left: 100px;
-  top: -80%;
+  margin-left: 0px;
+  top: 80%;
   
 }
 
@@ -123,7 +123,7 @@ header {
 .dropdown .dropdown-submenu {
   position: absolute;
   left: 100%;
-  top: -140px;
+  top: -200px;
   margin-top: 4px;
   margin-left: 0px;
   
