@@ -27,8 +27,8 @@ const VerticalChart=()=> {
         
         <Bar data={data} 
         width={isTabletOrMobile1?isTabletOrMobile2?isTabletOrMobile?isTabletOrMobile3?340:400:600:800:1500}
-        height={600}
-        style={{marginTop:"5em",backgroundColor:"rgba(225, 225, 225, 0.05)",backdropFilter:"blur(10px)",fontColor:"white"}}
+        height={680}
+        style={{marginTop:"4em",backgroundColor:"rgba(225, 225, 225, 0.05)",backdropFilter:"blur(10px)",fontColor:"white"}}
         options= {{
           maintainAspectRatio: false,
           plugins: {

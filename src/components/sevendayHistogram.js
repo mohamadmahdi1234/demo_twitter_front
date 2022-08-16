@@ -27,7 +27,7 @@ const LinechartSeven=()=> {
         
         <Line data={data} 
         width={isTabletOrMobile1?isTabletOrMobile2?isTabletOrMobile?isTabletOrMobile3?340:400:600:800:1500}
-        height={600}
+        height={680}
         style={{marginTop:"4em",backgroundColor:"rgba(225, 225, 225, 0.05)",backdropFilter:"blur(10px)",fontColor:"white"}}
         options= {{
           maintainAspectRatio: false,
@@ -43,7 +43,7 @@ const LinechartSeven=()=> {
             },
             title: {
               display: true,
-              text: 'Chart.js Line Chart',
+              text: 'Tweets sentiment polarity maximum seven days ago',
               color:"white",
               font: {
                 size: 20

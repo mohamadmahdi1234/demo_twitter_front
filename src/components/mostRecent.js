@@ -49,7 +49,7 @@ const Recent=()=> {
         {
             
             <div className='glass4' style={{height:"fit-content",backdropFilter:"blur(10px)",marginTop:"5em"}}>
-              <h1 style={{color:"white",marginLeft:"40%",width:"60%",marginTop:"20px"}}> {"WordCloud"}</h1>
+              <h1 style={{color:"white",marginTop:"20px",justifyContent:"center",justifyItems:"center",display:"flex"}}> {"WordCloud"}</h1>
             {
               wor!==null&&wor.length>0?
               <div style={{marginTop:"20px",width:"100%",display:"flex",justifyContent:"center",flexDirection:"row",backdropFilter:"blur(10px)"}}>

@@ -79,7 +79,7 @@ export const torob_Slice = createSlice({
             state.data_seven_day['labels'] = po;
             state.data_seven_day['datasets'] = [
               {
-                label: "Tweets sentiment polarity maximum seven days ago",
+                label: "",
                 data: po1,
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
