@@ -31,6 +31,8 @@ export const torob_Slice = createSlice({
             console.log("saved")
             console.log(state.Jso)
           },update_logo:(state,action)=>{
+            console.log("update logo:")
+            console.log(action.payload)
             if(action.payload===1){
               state.for_twitter_logo=""
             }else{
