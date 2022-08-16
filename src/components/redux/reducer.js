@@ -37,7 +37,7 @@ export const torob_Slice = createSlice({
             if(action.payload===1){
               state.for_twitter_logo=""
             }else{
-              state.for_twitter_logo=`https://demo-server-twitter.herokuapp.com/image?query=${state.query}`
+              state.for_twitter_logo=`https://demo-server-twitter.herokuapp.com/image?query=${state.query}&date=${Date.now().toString()}`
             }
           },changeupdate : (state)=>{
             state.update = !state.update

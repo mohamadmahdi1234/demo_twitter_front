@@ -19,6 +19,7 @@ const Recent=()=> {
     useEffect(() => {
       console.log("hello use effect")
       console.log(st)
+      console.log(st+Date.now().toString())
       setst(logo)
     },[wor,logo]);
   const resizeStyle = {
@@ -70,7 +71,7 @@ const Recent=()=> {
             <h1 style={{color:"white",marginLeft:"25%",marginBottom:"50px",width:"50%"}}> WordCloud image in shape of twitter logo</h1>
             {
               
-            <img cache={false} src={st} key={st} style={{marginLeft:"25%",marginBottom:"10%",width:"50%"}}></img>
+            <img cache={false} src={st} key={st+Date.now().toString()} style={{marginLeft:"25%",marginBottom:"10%",width:"50%"}}></img>
             }
       
           </div>
